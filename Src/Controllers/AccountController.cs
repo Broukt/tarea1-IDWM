@@ -47,14 +47,14 @@ public class AccountController : BaseApiController
 
         if (accountDto == null)
         {
-            return TypedResults.BadRequest("Invalid credentials");
+            return TypedResults.BadRequest("Credentials are invalid");
         }
 
         PasswordDto? passwordDto = await _accountRepository.GetPasswordAsync(loginDto.Email);
 
         if (passwordDto == null)
         {
-            return TypedResults.BadRequest("Invalid credentials");
+            return TypedResults.BadRequest("Internal server error, please try again later");
         }
 
         using var hmac = new HMACSHA512(passwordDto.PasswordSalt);
@@ -62,7 +62,7 @@ public class AccountController : BaseApiController
 
         if (!computedHashPassword.SequenceEqual(passwordDto.PasswordHash))
         {
-            return TypedResults.BadRequest("Invalid credentials");
+            return TypedResults.BadRequest("Credentials are invalid");
         }
 
         return TypedResults.Ok(accountDto);

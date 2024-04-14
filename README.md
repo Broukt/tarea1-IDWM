@@ -1,6 +1,6 @@
-# Course API Project
+# Tarea 1 - Int. al Desarrollo Web/Móvil
 
-This project is an API for managing courses.
+This project is the first homework of the course "Introducción al Desarrollo Web/Móvil".
 
 ## Installation
 
@@ -19,13 +19,13 @@ If the command does not return version 8.x of the SDK, follow the installation i
 1. Clone this repository to your local machine:
 
 ```
-git clone https://github.com/IDWM/courses-dotnet-api.git
+git clone https://github.com/Broukt/tarea1-IDWM.git
 ```
 
 2. Navigate to the project folder:
 
 ```
-cd courses-dotnet-api
+cd tarea1-IDWM
 ```
 
 3. Restore the project dependencies:
